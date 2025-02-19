@@ -8,6 +8,8 @@ import openpyxl
 from openpyxl.styles import Font, Alignment, PatternFill, Side, Border
 from itertools import cycle
 
+
+
 def process_pdf_file(filepath):
     """Process PDF file and return analysis results."""
     try:
@@ -165,6 +167,7 @@ def analyze_toppers(df):
                 "Year": row["Year"],
                 "Rank": f"Rank {rank}",
                 "Total Marks": row["Total Marks"],
+                "Total": row["Total"],  # Add this line to include total possible marks
                 "Percentage": row["Percentage"]
             })
     
@@ -207,85 +210,83 @@ def analyze_results(df):
     return result_analysis
 
 def create_excel_files(raw_data, toppers_data, analysis_data):
-    """Create Excel files with enhanced formatting and structure."""
     try:
         excel_files = {}
-
-        
-        # Define border style at the start
         border_style = Side(style='thin', color='000000')
         
-        # Update the color palette with light/medium variants for each course
+        # Define course colors ONCE at the top level
         course_colors = {
-            'header': '1E88E5',      # Blue header
-            'pass': '4CAF50',        # Green
-            'fail': 'F44336',        # Red
-            'course_palette': {
-                'Computer Engineering': {'light': 'FFE0B2', 'medium': 'FFB74D'},      # Light Orange/Peach
-                'Information Technology': {'light': 'E1BEE7', 'medium': 'CE93D8'},    # Light Purple/Lavender
-                'Civil Engineering': {'light': 'B3E5FC', 'medium': '81D4FA'},         # Light Blue/Sky
-                'Mechanical Engineering': {'light': 'C8E6C9', 'medium': 'A5D6A7'},    # Light Green/Mint
-                'Electrical Engineering': {'light': 'FFCCBC', 'medium': 'FFAB91'},    # Light Coral/Salmon
-                'Electronics Engineering': {'light': 'D7CCC8', 'medium': 'BCAAA4'},   # Light Brown/Taupe
-                'Default': {'light': 'F5F5F5', 'medium': 'E0E0E0'}                   # Light Grey
-            }
+            'CO - Diploma In Computer Engineering': ['FFFFD180', 'FFFF9800'],         # Orange shades
+            'IF - Diploma In Information Technology': ['FFE1BEE7', 'FF9C27B0'],       # Purple shades
+            'CE - Diploma In Civil Engineering': ['FFB3E5FC', 'FF03A9F4'],           # Blue shades
+            'ME - Diploma In Mechanical Engineering': ['FFC8E6C9', 'FF4CAF50'],       # Green shades
+            'EE - Diploma In Electrical Engineering': ['FFFFCCBC', 'FFFF5722'],       # Red shades
+            'EX - Diploma In Electronics Engineering': ['FFF8BBD0', 'FFE91E63'],      # Pink shades
+            'Default': ['FFE0E0E0', 'FF9E9E9E']                                      # Grey shades
         }
 
         def apply_formatting(worksheet, course=None):
-            """Apply formatting to worksheet with alternating light/medium colors"""
+            """Apply formatting to worksheet with distinct colors for each course"""
             if not worksheet:
+                return
+                
+            # Get the column index for course (either 'Course' or 'Course Name')
+            course_col_idx = None
+            for idx, cell in enumerate(worksheet[1]):
+                if cell.value in ['Course', 'Course Name','course']:
+                    course_col_idx = idx
+                    break
+            
+            if course_col_idx is None:
+                print("Warning: Could not find Course column")
                 return
                 
             # Format headers
             for cell in worksheet[1]:
-                cell.fill = PatternFill(start_color=course_colors['header'], 
-                                      end_color=course_colors['header'], 
-                                      fill_type='solid')
+                cell.fill = PatternFill(start_color='FF1E88E5', end_color='FF1E88E5', fill_type='solid')
                 cell.font = Font(color='FFFFFF', bold=True, size=12)
                 cell.alignment = Alignment(horizontal='center', vertical='center')
                 cell.border = Border(top=border_style, bottom=border_style, 
                                    left=border_style, right=border_style)
             
-            # Group rows by course for alternating colors
+            # Group and color rows by course
             current_course = None
-            course_row_count = 0
+            row_count = 0
             
-            for idx, row in enumerate(worksheet.iter_rows(min_row=2), start=2):
-                row_course = row[0].value if course is None else course
+            for row in worksheet.iter_rows(min_row=2):
+                # Get course from the correct column
+                row_course = row[course_col_idx].value if course is None else course
                 
-                # Reset counter when course changes
-                if row_course != current_course:
-                    current_course = row_course
-                    course_row_count = 0
+                # Special formatting for percentage distribution rows
+                is_percentage_row = row_course == "Percentage Distribution"
                 
-                # Get course colors (default if course not in palette)
-                course_colors_dict = course_colors['course_palette'].get(
-                    row_course, 
-                    course_colors['course_palette']['Default']
-                )
+                if is_percentage_row:
+                    # Use a lighter shade of the previous course color
+                    prev_course_colors = course_colors.get(current_course, course_colors['Default'])
+                    row_color = prev_course_colors[0]  # Use light shade
+                else:
+                    # Reset counter for new course
+                    if row_course != current_course:
+                        current_course = row_course
+                        row_count = 0
+                    colors = course_colors.get(current_course, course_colors['Default'])
+                    row_color = colors[row_count % 2]
                 
-                # Alternate between light and medium
-                color = course_colors_dict['medium'] if course_row_count % 2 == 0 else course_colors_dict['light']
-                
+                # Apply formatting to each cell
                 for cell in row:
                     if cell.value is not None:
+                        cell.fill = PatternFill(start_color=row_color, end_color=row_color, fill_type='solid')
+                        cell.font = Font(color='000000', bold=is_percentage_row)  # Make percentage rows bold
                         cell.alignment = Alignment(horizontal='center', vertical='center')
                         cell.border = Border(top=border_style, bottom=border_style, 
                                           left=border_style, right=border_style)
-                        cell.fill = PatternFill(start_color=color, end_color=color, fill_type='solid')
-                        # Use white text for dark backgrounds
-                        cell.font = Font(color='FFFFFF' if course_row_count % 2 == 0 else '000000')
                 
-                course_row_count += 1
+                if not is_percentage_row:
+                    row_count += 1
 
             # Adjust column widths
             for column in worksheet.columns:
-                max_length = 0
-                for cell in column:
-                    try:
-                        max_length = max(max_length, len(str(cell.value or "")))
-                    except:
-                        pass
+                max_length = max(len(str(cell.value or "")) for cell in column)
                 adjusted_width = (max_length + 2) * 1.2
                 worksheet.column_dimensions[column[0].column_letter].width = adjusted_width
 
@@ -296,8 +297,12 @@ def create_excel_files(raw_data, toppers_data, analysis_data):
             
             raw_excel = BytesIO()
             with pd.ExcelWriter(raw_excel, engine='openpyxl') as writer:
-                pd.DataFrame(raw_data).to_excel(writer, sheet_name='Extracted Data', index=False)
-                apply_formatting(writer.sheets['Extracted Data'])
+                df_raw = pd.DataFrame(raw_data)
+                # Rename 'Course Name' to 'Course' for consistency
+                #df_raw = df_raw.rename(columns={'Course Name': 'course'})
+                df_raw.to_excel(writer, sheet_name='Extracted Data', index=False)
+                worksheet = writer.sheets['Extracted Data']
+                apply_formatting(worksheet)
             raw_excel.seek(0)
             excel_files['raw_data'] = raw_excel
 
@@ -306,17 +311,20 @@ def create_excel_files(raw_data, toppers_data, analysis_data):
             toppers_excel = BytesIO()
             
             with pd.ExcelWriter(toppers_excel, engine='openpyxl') as writer:
-                pd.DataFrame(toppers_data).to_excel(writer, sheet_name='Toppers', index=False)
+                df_toppers = pd.DataFrame(toppers_data)
+                # Rename 'Course Name' to 'Course' for consistency
+                #df_toppers = df_toppers.rename(columns={'Course Name': 'course'})
+                df_toppers.to_excel(writer, sheet_name='Toppers', index=False)
                 worksheet = writer.sheets['Toppers']
                 apply_formatting(worksheet)
                 
                 # Highlight top performers
-                for row in worksheet.iter_rows(min_row=2):
-                    if row[-1].value:  # Check if percentage exists
-                        percentage = float(str(row[-1].value).replace('%', ''))
-                        if percentage >= 75:
-                            for cell in row:
-                                cell.font = Font(color=course_colors['pass'], bold=True)
+                #for row in worksheet.iter_rows(min_row=2):
+                #    if row[-1].value:  # Check if percentage exists
+                #        percentage = float(str(row[-1].value).replace('%', ''))
+                #        if percentage >= 75:
+                #            for cell in row:
+                #                cell.font = Font(color=course_colors['pass'], bold=True)
             toppers_excel.seek(0)
             excel_files['toppers'] = toppers_excel
 
@@ -325,23 +333,36 @@ def create_excel_files(raw_data, toppers_data, analysis_data):
             analysis_excel = BytesIO()
             with pd.ExcelWriter(analysis_excel, engine='openpyxl') as writer:
                 # Create and format analysis sheet
-                analysis_rows = [
-                    {
-                        'Course': course,
-                        'Semester': semester,
-                        'Total Students': stats['Total Students'],
-                        'Pass': stats['Pass'],
-                        'Pass Percentage': f"{stats['Pass Percentage']}%",
-                        'Distinction': stats['Distinction'],
-                        'First Class': stats['First Class'],
-                        'Second Class': stats['Second Class'],
-                        'ATKT': stats['ATKT'],
-                        'Fail': stats['Fail']
-                    }
-                    for course, semesters in analysis_data.items()
-                    for semester, stats in semesters.items()
-                ]
-                
+                analysis_rows = []
+                for course, semesters in analysis_data.items():
+                    for semester, stats in semesters.items():
+                        # Add main stats row
+                        analysis_rows.append({
+                            'Course': course,
+                            'Semester': semester,
+                            'Total Students': stats['Total Students'],
+                            'Pass': stats['Pass'],
+                            'Pass Percentage': f"{stats['Pass Percentage']}%",
+                            'Distinction': stats['Distinction'],
+                            'First Class': stats['First Class'],
+                            'Second Class': stats['Second Class'],
+                            'ATKT': stats['ATKT'],
+                            'Fail': stats['Fail']
+                        })
+                        # Add percentage distribution row
+                        analysis_rows.append({
+                            'Course': f"Percentage Distribution",
+                            'Semester': "",
+                            'Total Students': "100%",
+                            'Pass': f"{(stats['Pass']/stats['Total Students']*100):.2f}%",
+                            'Pass Percentage': "",
+                            'Distinction': f"{(stats['Distinction']/stats['Total Students']*100):.2f}%",
+                            'First Class': f"{(stats['First Class']/stats['Total Students']*100):.2f}%",
+                            'Second Class': f"{(stats['Second Class']/stats['Total Students']*100):.2f}%",
+                            'ATKT': f"{(stats['ATKT']/stats['Total Students']*100):.2f}%",
+                            'Fail': f"{(stats['Fail']/stats['Total Students']*100):.2f}%"
+                        })
+
                 pd.DataFrame(analysis_rows).to_excel(writer, sheet_name='Analysis', index=False)
                 apply_formatting(writer.sheets['Analysis'])
                 
@@ -371,3 +392,4 @@ def create_excel_files(raw_data, toppers_data, analysis_data):
     except Exception as e:
         print(f"Error in create_excel_files: {str(e)}")
         return None
+
