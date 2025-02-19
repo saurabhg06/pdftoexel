@@ -139,16 +139,22 @@
 
         .charts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin: 2rem 0;
         }
 
         .chart-container {
             background: white;
             padding: 1.5rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .chart-container canvas {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1;
         }
 
         .loading {
@@ -502,10 +508,90 @@
         .download-btn i {
             font-size: 1.1em;
         }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-brand i {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Result Analyzer</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('main.index') }}" {% if request.endpoint == 'main.index' %}class="active"{% endif %}>
+                <i class="fas fa-home"></i> Home
+            </a></li>
+            <li><a href="{{ url_for('main.readme') }}" {% if request.endpoint == 'main.readme' %}class="active"{% endif %}>
+                <i class="fas fa-book"></i> Guide
+            </a></li>
+            <li><a href="{{ url_for('main.caution') }}" {% if request.endpoint == 'main.caution' %}class="active"{% endif %}>
+                <i class="fas fa-exclamation-triangle"></i> Caution
+            </a></li>
+            <li><a href="{{ url_for('main.about') }}" {% if request.endpoint == 'main.about' %}class="active"{% endif %}>
+                <i class="fas fa-users"></i> About Us
+            </a></li>
+        </ul>
+    </nav>
     <div class="container">
         <header class="header">
             <h1>University Result Processor</h1>
@@ -827,56 +913,84 @@
         });
 
         function createCharts(analysis) {
-            // Pass Percentage Chart
-            const passData = Object.entries(analysis).map(([course, data]) => ({
-                course: course.split(' - ')[0],
-                passRate: Object.values(data)[0]['Pass Percentage']
-            }));
+            const chartsDiv = document.getElementById('charts');
+            chartsDiv.innerHTML = '<h2>Performance Analytics</h2>';
 
-            new Chart(document.getElementById('passPercentageChart'), {
-                type: 'bar',
-                data: {
-                    labels: passData.map(d => d.course),
-                    datasets: [{
-                        label: 'Pass Percentage',
-                        data: passData.map(d => d.passRate),
-                        backgroundColor: '#3498db'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Pass Percentage by Department'
+            // Create a container for all charts
+            const chartsContainer = document.createElement('div');
+            chartsContainer.className = 'charts-grid';
+            chartsDiv.appendChild(chartsContainer);
+
+            // Process data for each course
+            Object.entries(analysis).forEach(([course, semesters]) => {
+                // Create chart container
+                const chartDiv = document.createElement('div');
+                chartDiv.className = 'chart-container';
+                chartsContainer.appendChild(chartDiv);
+
+                // Create canvas for the chart
+                const canvas = document.createElement('canvas');
+                chartDiv.appendChild(canvas);
+
+                // Aggregate data across semesters
+                const courseData = {
+                    'Distinction': 0,
+                    'First Class': 0,
+                    'Second Class': 0,
+                    'ATKT': 0,
+                    'Fail': 0
+                };
+
+                // Sum up the values across all semesters
+                Object.values(semesters).forEach(semData => {
+                    courseData['Distinction'] += semData['Distinction'];
+                    courseData['First Class'] += semData['First Class'];
+                    courseData['Second Class'] += semData['Second Class'];
+                    courseData['ATKT'] += semData['ATKT'];
+                    courseData['Fail'] += semData['Fail'];
+                });
+
+                // Create pie chart
+                new Chart(canvas, {
+                    type: 'pie',
+                    data: {
+                        labels: Object.keys(courseData),
+                        datasets: [{
+                            data: Object.values(courseData),
+                            backgroundColor: [
+                                '#2ecc71', // Distinction - Green
+                                '#3498db', // First Class - Blue
+                                '#f1c40f', // Second Class - Yellow
+                                '#e67e22', // ATKT - Orange
+                                '#e74c3c'  // Fail - Red
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: `${course} - Result Distribution`,
+                                font: {
+                                    size: 16
+                                }
+                            },
+                            legend: {
+                                position: 'bottom'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = ((context.raw / total) * 100).toFixed(1);
+                                        return `${context.label}: ${context.raw} (${percentage}%)`;
+                                    }
+                                }
+                            }
                         }
                     }
-                }
-            });
-
-            // Grades Distribution Chart
-            new Chart(document.getElementById('gradesDistributionChart'), {
-                type: 'pie',
-                data: {
-                    labels: Object.keys(analysis),
-                    datasets: [{
-                        data: Object.values(analysis).map(d => 
-                            Object.values(d)[0]['Pass Percentage']),
-                        backgroundColor: [
-                            '#2ecc71', '#3498db', '#f1c40f', 
-                            '#9b59b6', '#e74c3c', '#1abc9c'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Department-wise Distribution'
-                        }
-                    }
-                }
+                });
             });
         }
 

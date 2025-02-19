@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}Cautions & Notices - MSBTE Result Analyzer{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    .caution-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .hero-warning {
+        background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .hero-warning h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .caution-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .caution-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .caution-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .caution-card i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .caution-card.warning i {
+        color: var(--danger);
+    }
+
+    .process-section {
+        background: var(--light);
+        padding: 2rem;
+        border-radius: 15px;
+        margin-top: 3rem;
+    }
+
+    .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .step-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="caution-container">
+    <div class="hero-warning">
+        <i class="fas fa-exclamation-triangle fa-3x"></i>
+        <h1>Important Notice</h1>
+        <p>Please read these important notices before using the Result Analyzer</p>
+    </div>
+
+    <div class="caution-grid">
+        <div class="caution-card warning">
+            <i class="fas fa-exclamation-circle"></i>
+            <h2>Data Accuracy Notice</h2>
+            <p>Due to variations in PDF structure and formatting across different result sheets, some data extraction may be incomplete or inaccurate. Always verify the analyzed results with original documents.</p>
+        </div>
+
+        <div class="caution-card">
+            <i class="fas fa-shield-alt"></i>
+            <h2>Data Privacy</h2>
+            <p>Your uploaded files are processed locally and deleted immediately after analysis. We do not store any personal information or result data on our servers.</p>
+        </div>
+
+        <div class="caution-card warning">
+            <i class="fas fa-file-pdf"></i>
+            <h2>PDF Compatibility</h2>
+            <p>Tool works best with official MSBTE result PDFs. Modified or non-standard formatted PDFs may not be processed correctly. Please use original result sheets.</p>
+        </div>
+    </div>
+
+    <div class="process-section">
+        <h2>How Data Processing Works</h2>
+        <div class="process-steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>PDF Upload</h3>
+                <i class="fas fa-upload fa-2x mb-3"></i>
+                <p>Your PDF is securely uploaded and processed locally on the server</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Data Extraction</h3>
+                <i class="fas fa-cogs fa-2x mb-3"></i>
+                <p>Text is extracted using pattern matching to identify student records, marks, and results</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Analysis</h3>
+                <i class="fas fa-chart-bar fa-2x mb-3"></i>
+                <p>Data is processed to calculate statistics, identify toppers, and generate insights</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>Verification Needed</h3>
+                <i class="fas fa-check-double fa-2x mb-3"></i>
+                <p>Results should be cross-verified with original documents for accuracy</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="caution-grid mt-4">
+        <div class="caution-card">
+            <i class="fas fa-bug"></i>
+            <h2>Known Limitations</h2>
+            <ul>
+                <li>May struggle with scanned PDFs</li>
+                <li>Complex subject names might be truncated</li>
+                <li>Special characters may cause issues</li>
+                <li>Very large files may take longer to process</li>
+            </ul>
+        </div>
+
+        <div class="caution-card">
+            <i class="fas fa-check-circle"></i>
+            <h2>Best Practices</h2>
+            <ul>
+                <li>Use original MSBTE result PDFs</li>
+                <li>Verify important statistics manually</li>
+                <li>Report any discrepancies found</li>
+                <li>Keep original documents for reference</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

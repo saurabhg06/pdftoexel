@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify, current_app, send_file
+from flask import Blueprint, render_template, request, jsonify, current_app, send_file, url_for
 from werkzeug.utils import secure_filename
 import os
 from src.utils import process_pdf_file
@@ -75,3 +75,15 @@ def download_excel(file_type):
         as_attachment=True,
         download_name=file_names[file_type]
     )
+
+@main.route('/readme')
+def readme():
+    return render_template('readme.html')
+
+@main.route('/caution')
+def caution():
+    return render_template('caution.html')
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
