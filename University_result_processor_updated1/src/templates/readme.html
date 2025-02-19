@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block title %}User Guide - MSBTE Result Analyzer{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+    .guide-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .hero-guide {
+        background: linear-gradient(135deg, var(--primary) 0%, #3498db 100%);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .guide-section {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .feature-card {
+        background: var(--light);
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .feature-card i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .steps-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .step-item {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    .step-content {
+        flex: 1;
+    }
+
+    .faq-section {
+        margin-top: 3rem;
+    }
+
+    .faq-item {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .faq-item h3 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .tips-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .tips-list li {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: var(--light);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .tips-list i {
+        color: var(--primary);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="guide-container">
+    <div class="hero-guide">
+        <i class="fas fa-book fa-3x mb-4"></i>
+        <h1>User Guide</h1>
+        <p>Learn how to use the MSBTE Result Analyzer effectively</p>
+    </div>
+
+    <div class="guide-section">
+        <h2><i class="fas fa-star"></i> Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Result Analysis</h3>
+                <p>Comprehensive analysis of class performance</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Toppers List</h3>
+                <p>Automatically identify top performers</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-file-excel"></i>
+                <h3>Excel Export</h3>
+                <p>Download results in Excel format</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="guide-section">
+        <h2><i class="fas fa-tasks"></i> How to Use</h2>
+        <div class="steps-container">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Upload PDF</h3>
+                    <p>Drag and drop your MSBTE result PDF file or use the file browser to upload.</p>
+                    <div class="tips-list">
+                        <li><i class="fas fa-check"></i> Use official MSBTE result PDFs</li>
+                        <li><i class="fas fa-check"></i> Ensure PDF is not password protected</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Processing</h3>
+                    <p>Wait for the system to process and analyze the results.</p>
+                    <div class="tips-list">
+                        <li><i class="fas fa-clock"></i> Processing time depends on PDF size</li>
+                        <li><i class="fas fa-info-circle"></i> Progress bar shows status</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>View Results</h3>
+                    <p>Explore different tabs to view analysis:</p>
+                    <ul>
+                        <li>Overall Statistics</li>
+                        <li>Toppers List</li>
+                        <li>Grade Distribution</li>
+                        <li>Pass/Fail Analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Download Reports</h3>
+                    <p>Export results in various formats:</p>
+                    <div class="tips-list">
+                        <li><i class="fas fa-file-excel"></i> Raw Data Excel</li>
+                        <li><i class="fas fa-chart-bar"></i> Analysis Report</li>
+                        <li><i class="fas fa-trophy"></i> Toppers List</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="guide-section faq-section">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What file formats are supported?</h3>
+            <p>Currently, we only support PDF files generated from the official MSBTE result portal.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How accurate is the analysis?</h3>
+            <p>While we strive for high accuracy, it's recommended to verify critical data with original documents.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is my data secure?</h3>
+            <p>Yes, all processing is done locally and files are deleted immediately after analysis.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What if I find an error?</h3>
+            <p>Please report any discrepancies through our contact form with details of the issue.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

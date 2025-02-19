@@ -1,0 +1,18 @@
+my-flask-app
+├── src
+│   ├── static
+│   │   ├── css
+│   │   │   └── style.css
+│   │   └── js
+│   │       └── main.js
+│   ├── templates
+│   │   ├── base.html
+│   │   └── index.html
+│   ├── __init__.py
+│   ├── routes.py
+│   └── models.py
+├── tests
+│   └── __init__.py
+├── requirements.txt
+├── config.py
+└── README.md
