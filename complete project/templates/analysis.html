@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Analysis Results</h1>
+        </header>
+        
+        <main>
+            <section class="analysis-results">
+                <h2>Analysis Summary</h2>
+                {% if data %}
+                    <div class="results-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    {% for column in data[0].keys() %}
+                                        <th>{{ column }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in data %}
+                                    <tr>
+                                        {% for value in row.values() %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p>No data available for analysis.</p>
+                {% endif %}
+            </section>
+
+            <div class="actions">
+                <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+                {% if data %}
+                    <a href="{{ url_for('download_excel') }}" class="button">Download Excel</a>
+                {% endif %}
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 PDF to Excel Analyzer</p>
+        </footer>
+    </div>
+</body>
+</html>

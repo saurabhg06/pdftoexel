@@ -1,0 +1,338 @@
+{
+    "CE - Diploma In Civil Engineering": {
+        "FIFTH": {
+            "Total Students": 17,
+            "Passed Students": 0,
+            "Failed Students": 5,
+            "Distinction": 17,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FINAL": {
+            "Total Students": 7,
+            "Passed Students": 0,
+            "Failed Students": 4,
+            "Distinction": 7,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FIRST": {
+            "Total Students": 16,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 16,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FOURTH": {
+            "Total Students": 60,
+            "Passed Students": 0,
+            "Failed Students": 17,
+            "Distinction": 60,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "SECOND": {
+            "Total Students": 62,
+            "Passed Students": 0,
+            "Failed Students": 28,
+            "Distinction": 62,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "THIRD": {
+            "Total Students": 24,
+            "Passed Students": 0,
+            "Failed Students": 9,
+            "Distinction": 24,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        }
+    },
+    "CO - Diploma In Computer Engineering": {
+        "FIFTH": {
+            "Total Students": 1,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 1,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FINAL": {
+            "Total Students": 5,
+            "Passed Students": 0,
+            "Failed Students": 3,
+            "Distinction": 5,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FIRST": {
+            "Total Students": 4,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 4,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FOURTH": {
+            "Total Students": 16,
+            "Passed Students": 0,
+            "Failed Students": 9,
+            "Distinction": 16,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "SECOND": {
+            "Total Students": 41,
+            "Passed Students": 0,
+            "Failed Students": 11,
+            "Distinction": 41,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "THIRD": {
+            "Total Students": 9,
+            "Passed Students": 0,
+            "Failed Students": 5,
+            "Distinction": 9,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        }
+    },
+    "EE - Diploma In Electrical Engineering": {
+        "FIFTH": {
+            "Total Students": 4,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 4,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FINAL": {
+            "Total Students": 8,
+            "Passed Students": 0,
+            "Failed Students": 5,
+            "Distinction": 8,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FIRST": {
+            "Total Students": 10,
+            "Passed Students": 0,
+            "Failed Students": 1,
+            "Distinction": 10,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FOURTH": {
+            "Total Students": 11,
+            "Passed Students": 0,
+            "Failed Students": 2,
+            "Distinction": 11,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "SECOND": {
+            "Total Students": 41,
+            "Passed Students": 0,
+            "Failed Students": 7,
+            "Distinction": 41,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "THIRD": {
+            "Total Students": 4,
+            "Passed Students": 0,
+            "Failed Students": 2,
+            "Distinction": 4,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        }
+    },
+    "EX - Diploma In Electronics Engineering": {
+        "FIFTH": {
+            "Total Students": 10,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 10,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FINAL": {
+            "Total Students": 1,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 1,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FIRST": {
+            "Total Students": 10,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 10,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FOURTH": {
+            "Total Students": 31,
+            "Passed Students": 0,
+            "Failed Students": 8,
+            "Distinction": 31,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "SECOND": {
+            "Total Students": 43,
+            "Passed Students": 0,
+            "Failed Students": 16,
+            "Distinction": 43,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "THIRD": {
+            "Total Students": 8,
+            "Passed Students": 0,
+            "Failed Students": 6,
+            "Distinction": 8,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        }
+    },
+    "IF - Diploma In Information Technology": {
+        "FIFTH": {
+            "Total Students": 2,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 2,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FINAL": {
+            "Total Students": 9,
+            "Passed Students": 0,
+            "Failed Students": 4,
+            "Distinction": 9,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FIRST": {
+            "Total Students": 3,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 3,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FOURTH": {
+            "Total Students": 8,
+            "Passed Students": 0,
+            "Failed Students": 3,
+            "Distinction": 8,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "SECOND": {
+            "Total Students": 31,
+            "Passed Students": 0,
+            "Failed Students": 8,
+            "Distinction": 31,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "THIRD": {
+            "Total Students": 10,
+            "Passed Students": 0,
+            "Failed Students": 7,
+            "Distinction": 10,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        }
+    },
+    "ME - Diploma In Mechanical Engineering": {
+        "FIFTH": {
+            "Total Students": 10,
+            "Passed Students": 0,
+            "Failed Students": 3,
+            "Distinction": 10,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FINAL": {
+            "Total Students": 45,
+            "Passed Students": 0,
+            "Failed Students": 19,
+            "Distinction": 45,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FIRST": {
+            "Total Students": 22,
+            "Passed Students": 0,
+            "Failed Students": 0,
+            "Distinction": 22,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "FOURTH": {
+            "Total Students": 66,
+            "Passed Students": 0,
+            "Failed Students": 28,
+            "Distinction": 66,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "SECOND": {
+            "Total Students": 94,
+            "Passed Students": 0,
+            "Failed Students": 25,
+            "Distinction": 94,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        },
+        "THIRD": {
+            "Total Students": 67,
+            "Passed Students": 0,
+            "Failed Students": 29,
+            "Distinction": 67,
+            "First Class": 0,
+            "Second Class": 0,
+            "Pass Percentage": 0.0
+        }
+    }
+}

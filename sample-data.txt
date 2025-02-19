@@ -1,0 +1,13 @@
+student_id,name,semester,subject,marks,grade,status
+STU001,John Doe,1,Mathematics,85,A,Pass
+STU001,John Doe,1,Physics,78,B,Pass
+STU001,John Doe,1,Chemistry,92,A,Pass
+STU002,Jane Smith,1,Mathematics,95,A,Pass
+STU002,Jane Smith,1,Physics,88,A,Pass
+STU002,Jane Smith,1,Chemistry,82,B,Pass
+STU003,Mike Johnson,1,Mathematics,65,C,Pass
+STU003,Mike Johnson,1,Physics,45,F,Fail
+STU003,Mike Johnson,1,Chemistry,72,B,Pass
+STU004,Sarah Williams,1,Mathematics,91,A,Pass
+STU004,Sarah Williams,1,Physics,89,A,Pass
+STU004,Sarah Williams,1,Chemistry,94,A,Pass

@@ -1,0 +1,380 @@
+[
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2200160183,
+        "Year":"First Year",
+        "Total Marks":1210.0,
+        "Student Name":"BANSODE AMIT ANIRUDH X"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2200160103,
+        "Year":"First Year",
+        "Total Marks":1073.0,
+        "Student Name":"MANE AKSHATA KHANDERAO X"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2200160140,
+        "Year":"First Year",
+        "Total Marks":1028.0,
+        "Student Name":"ROHE CHAITANYA DATTATRAY X"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2100160068,
+        "Year":"Second Year",
+        "Total Marks":1091.0,
+        "Student Name":"WAGHMARE DINESH DAGDU X"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2100160552,
+        "Year":"Second Year",
+        "Total Marks":1067.0,
+        "Student Name":"MANDADE PRATIK PRASHANT X"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2000160074,
+        "Year":"Second Year",
+        "Total Marks":1063.0,
+        "Student Name":"KARAD SONALI BALASAHEB X"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2100160059,
+        "Year":"Third Year",
+        "Total Marks":910.0,
+        "Student Name":"WADGAONKAR PRATIK PRADIP R"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2100160129,
+        "Year":"Third Year",
+        "Total Marks":901.0,
+        "Student Name":"NADE NIKHIL KAKASAHEB R"
+    },
+    {
+        "Course Name":"CE - Diploma In Civil Engineering",
+        "Enrollment Number":2100160128,
+        "Year":"Third Year",
+        "Total Marks":898.0,
+        "Student Name":"KULKARNI SARTHAK KIRAN R"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2200160221,
+        "Year":"First Year",
+        "Total Marks":849.0,
+        "Student Name":"BIRAJDAR ANJANA DAYANAND X"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2200160245,
+        "Year":"First Year",
+        "Total Marks":832.0,
+        "Student Name":"MARDE VAISHNAVI NETAJI X"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2200160276,
+        "Year":"First Year",
+        "Total Marks":795.0,
+        "Student Name":"SOMWANSHI SUMIT SOMNATHRAO X"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2100160198,
+        "Year":"Second Year",
+        "Total Marks":901.0,
+        "Student Name":"WAGHMARE ROHIT SUDHAKAR X"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2100160197,
+        "Year":"Second Year",
+        "Total Marks":871.0,
+        "Student Name":"SURYAWANSHI RAJSHRI PIRAJI X"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2100160136,
+        "Year":"Second Year",
+        "Total Marks":843.0,
+        "Student Name":"BANSODE SHUBHANGI ASHOK X"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2100160177,
+        "Year":"Third Year",
+        "Total Marks":829.0,
+        "Student Name":"NARWADE RAM SANDIP R"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2100160161,
+        "Year":"Third Year",
+        "Total Marks":827.0,
+        "Student Name":"JAGTAP MADHAV VENKAT R"
+    },
+    {
+        "Course Name":"CO - Diploma In Computer Engineering",
+        "Enrollment Number":2100160193,
+        "Year":"Third Year",
+        "Total Marks":822.0,
+        "Student Name":"SHINDE RUDRANI SADASHIV R"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2200160319,
+        "Year":"First Year",
+        "Total Marks":926.0,
+        "Student Name":"SHAIKH FIJA KHAJUDDIN X"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2200160318,
+        "Year":"First Year",
+        "Total Marks":912.0,
+        "Student Name":"SATHE SRUSHTI ANIL X"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2200160298,
+        "Year":"First Year",
+        "Total Marks":868.0,
+        "Student Name":"KACHE PALLAVI VIRBHADRA X"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2200160296,
+        "Year":"Second Year",
+        "Total Marks":727.0,
+        "Student Name":"JAGATAP ASHWINI DHANRAJ R"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2200160297,
+        "Year":"Second Year",
+        "Total Marks":711.0,
+        "Student Name":"JAGTAP UTKARSHA NARSINHA R"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2200160310,
+        "Year":"Second Year",
+        "Total Marks":674.0,
+        "Student Name":"NITURE SMRUTI RAVIKUMAR R"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2100160252,
+        "Year":"Third Year",
+        "Total Marks":914.0,
+        "Student Name":"RAUT KANHAIYA JAGANNATH R"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2100160260,
+        "Year":"Third Year",
+        "Total Marks":913.0,
+        "Student Name":"SONVANE SURAJ GAJANAN R"
+    },
+    {
+        "Course Name":"EE - Diploma In Electrical Engineering",
+        "Enrollment Number":2100160227,
+        "Year":"Third Year",
+        "Total Marks":910.0,
+        "Student Name":"KAWALE SAMRUDDHI SHITAL R"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160353,
+        "Year":"First Year",
+        "Total Marks":864.0,
+        "Student Name":"BHOYBAR SNEHA SAHEBRAO X"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160388,
+        "Year":"First Year",
+        "Total Marks":817.0,
+        "Student Name":"SOLAPURE VANSHRI GOVIND X"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160367,
+        "Year":"First Year",
+        "Total Marks":797.0,
+        "Student Name":"KAMBLE SANGHPRIYA SHIVRAM X"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2100160272,
+        "Year":"Second Year",
+        "Total Marks":983.0,
+        "Student Name":"ABHANG SHWETA BAPURAO X"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160041,
+        "Year":"Second Year",
+        "Total Marks":923.0,
+        "Student Name":"BHADADE RENUKA SANJIV X"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160045,
+        "Year":"Second Year",
+        "Total Marks":922.0,
+        "Student Name":"BHANDE VISHAL MADHAV X"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160047,
+        "Year":"Third Year",
+        "Total Marks":886.0,
+        "Student Name":"MUJAFFAR MAJJID SHAIKH R"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2100160301,
+        "Year":"Third Year",
+        "Total Marks":868.0,
+        "Student Name":"KAZI ZOHA FATIMA IQBAL PARVEZ R"
+    },
+    {
+        "Course Name":"EX - Diploma In Electronics Engineering",
+        "Enrollment Number":2200160042,
+        "Year":"Third Year",
+        "Total Marks":857.0,
+        "Student Name":"BOROLE ASHWINI BABURAO R"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2200160557,
+        "Year":"First Year",
+        "Total Marks":850.0,
+        "Student Name":"CHAVAN POOJA DHANANJAY X"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2200160596,
+        "Year":"First Year",
+        "Total Marks":835.0,
+        "Student Name":"WAGHMARE SAMIKSHA KAKASAHEB X"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2200160558,
+        "Year":"First Year",
+        "Total Marks":558.0,
+        "Student Name":"DESHMUKH MUSKAN SHABBIR X"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2100160360,
+        "Year":"Second Year",
+        "Total Marks":832.0,
+        "Student Name":"GAIKWAD SHRADDHA GANGADHAR X"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2200160576,
+        "Year":"Second Year",
+        "Total Marks":748.0,
+        "Student Name":"KHUNE RENUKA RAMKISAN R"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2200160577,
+        "Year":"Second Year",
+        "Total Marks":739.0,
+        "Student Name":"KOKANE SAKSHI SHAHAJI R"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2100160350,
+        "Year":"Third Year",
+        "Total Marks":800.0,
+        "Student Name":"BHANDARE ADITYA BALAJI R"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2100160406,
+        "Year":"Third Year",
+        "Total Marks":783.0,
+        "Student Name":"TAK PRASAD RAJENDRA R"
+    },
+    {
+        "Course Name":"IF - Diploma In Information Technology",
+        "Enrollment Number":2100160355,
+        "Year":"Third Year",
+        "Total Marks":777.0,
+        "Student Name":"DHAWLAPURE SAGAR DEVCHAND R"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2200160449,
+        "Year":"First Year",
+        "Total Marks":960.0,
+        "Student Name":"DESHMUKH KAMLESH ATUL X"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2200160542,
+        "Year":"First Year",
+        "Total Marks":898.0,
+        "Student Name":"SAYYED MOHTASHIM FAYYAZ HUSSAINI X"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2200160438,
+        "Year":"First Year",
+        "Total Marks":873.0,
+        "Student Name":"ZAKADE ASMITA SURESH X"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2100160412,
+        "Year":"Second Year",
+        "Total Marks":1072.0,
+        "Student Name":"BANDE VAIBHAVI NAMDEV X"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2100160445,
+        "Year":"Second Year",
+        "Total Marks":1024.0,
+        "Student Name":"MARTAND ANJALI YADAV X"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2100160419,
+        "Year":"Second Year",
+        "Total Marks":993.0,
+        "Student Name":"CHANDE ARJUN RAJKUMAR X"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2100160449,
+        "Year":"Third Year",
+        "Total Marks":912.0,
+        "Student Name":"PATIL JYOTI DATTATREYA R"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2100160465,
+        "Year":"Third Year",
+        "Total Marks":889.0,
+        "Student Name":"SURWASE AKSHAY ASHOK R"
+    },
+    {
+        "Course Name":"ME - Diploma In Mechanical Engineering",
+        "Enrollment Number":2100160466,
+        "Year":"Third Year",
+        "Total Marks":880.0,
+        "Student Name":"SWAMI ROHIT SANTOSH R"
+    }
+]

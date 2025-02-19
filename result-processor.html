@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Processor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #f5f6fa;
+            --success: #2ecc71;
+            --text: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: var(--secondary);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .upload-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .upload-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .drop-zone {
+            border: 2px dashed var(--primary);
+            border-radius: 10px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone.dragover {
+            background: rgba(74, 144, 226, 0.1);
+            border-color: var(--success);
+        }
+
+        .drop-zone i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .results-section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .results-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+
+        .result-table th,
+        .result-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-table th {
+            background: var(--secondary);
+            font-weight: 600;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--secondary);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-message {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .upload-section {
+                padding: 1.5rem;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>University Result Processor</h1>
+            <p>Upload your PDF result file to generate comprehensive analysis and visualizations</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <i>📄</i>
+                    <h3>Drag & Drop PDF File</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                </div>
+                <div class="success-message" id="successMessage">
+                    File uploaded successfully! Processing results...
+                </div>
+            </section>
+
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>Processing your results...</p>
+            </div>
+
+            <section class="results-section" id="resultsSection">
+                <div class="results-tabs">
+                    <button class="tab active" data-tab="summary">Summary</button>
+                    <button class="tab" data-tab="detailed">Detailed Results</button>
+                    <button class="tab" data-tab="analytics">Analytics</button>
+                </div>
+
+                <div class="tab-content active" id="summary">
+                    <h2>Results Summary</h2>
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="summaryTable">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="detailed">
+                    <h2>Detailed Results</h2>
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailedTable">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tab-content" id="analytics">
+                    <h2>Performance Analytics</h2>
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="distributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // DOM Elements
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const loading = document.getElementById('loading');
+        const resultsSection = document.getElementById('resultsSection');
+        const successMessage = document.getElementById('successMessage');
+
+        // Event Listeners
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', handleDragOver);
+        dropZone.addEventListener('dragleave', handleDragLeave);
+        dropZone.addEventListener('drop', handleDrop);
+        fileInput.addEventListener('change', handleFileSelect);
+
+        // Tab Functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Drag and Drop Handlers
+        function handleDragOver(e) {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        }
+
+        function handleDragLeave(e) {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        }
+
+        function handleFileSelect(e) {
+            const files = e.target.files;
+            handleFiles(files);
+        }
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type === 'application/pdf') {
+                    showSuccessMessage();
+                    processFile(file);
+                } else {
+                    alert('Please upload a PDF file');
+                }
+            }
+        }
+
+        function showSuccessMessage() {
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+                loading.style.display = 'block';
+                // Simulate processing time
+                setTimeout(showResults, 2000);
+            }, 1500);
+        }
+
+        function showResults() {
+            loading.style.display = 'none';
+            resultsSection.style.display = 'block';
+            initializeCharts();
+        }
+
+        function initializeCharts() {
+            // Sample data for charts
+            const performanceData = {
+                labels: ['Assignment 1', 'Mid Term', 'Assignment 2', 'Final'],
+                datasets: [{
+                    label: 'Performance Trend',
+                    data: [85, 78, 82, 88],
+                    borderColor: '#4a90e2',
+                    tension: 0.4,
+                    fill: false
+                }]
+            };
+
+            const distributionData = {
+                labels: ['A', 'B', 'C', 'D', 'F'],
+                datasets: [{
+                    label: 'Grade Distribution',
+                    data: [30, 45, 15, 8, 2],
+                    backgroundColor: [
+                        '#2ecc71',
+                        '#3498db',
+                        '#f1c40f',
+                        '#e67e22',
+                        '#e74c3c'
+                    ]
+                }]
+            };
+
+            // Performance Chart
+            new Chart(document.getElementById('performanceChart'), {
+                type: 'line',
+                data: performanceData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Performance Trend'
+                        }
+                    }
+                }
+            });
+
+            // Distribution Chart
+            new Chart(document.getElementById('distributionChart'), {
+                type: 'doughnut',
+                data: distributionData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Grade Distribution'
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

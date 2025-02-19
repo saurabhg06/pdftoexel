@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>PDF Analysis App</title>
+</head>
+<body>
+    <header>
+        <h1>Upload Your University Result PDF</h1>
+    </header>
+    <main>
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="pdf_file" accept=".pdf" required>
+            <button type="submit">Upload</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 PDF Analysis App</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

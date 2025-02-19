@@ -1,0 +1,432 @@
+{
+    "CE - Diploma In Civil Engineering": {
+        "FIFTH SEMESTER (I)": {
+            "Total Students": 114,
+            "Distinction": 65,
+            "First Class": 92,
+            "First Class or More": 157,
+            "Second Class": 0,
+            "Fail": 5,
+            "ATKT": 8,
+            "Pass": 109,
+            "Pass Percentage": 95.61
+        },
+        "FINAL SEMESTER (I)": {
+            "Total Students": 7,
+            "Distinction": 0,
+            "First Class": 3,
+            "First Class or More": 3,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 0,
+            "Pass": 7,
+            "Pass Percentage": 100.0
+        },
+        "FIRST SEMESTER (I)": {
+            "Total Students": 16,
+            "Distinction": 0,
+            "First Class": 5,
+            "First Class or More": 5,
+            "Second Class": 1,
+            "Fail": 9,
+            "ATKT": 1,
+            "Pass": 7,
+            "Pass Percentage": 43.75
+        },
+        "FIRST SEMESTER (K)": {
+            "Total Students": 1,
+            "Distinction": 0,
+            "First Class": 0,
+            "First Class or More": 0,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 1,
+            "Pass": 1,
+            "Pass Percentage": 100.0
+        },
+        "FOURTH SEMESTER (I)": {
+            "Total Students": 60,
+            "Distinction": 0,
+            "First Class": 14,
+            "First Class or More": 14,
+            "Second Class": 17,
+            "Fail": 5,
+            "ATKT": 7,
+            "Pass": 55,
+            "Pass Percentage": 91.67
+        },
+        "SECOND SEMESTER (I)": {
+            "Total Students": 62,
+            "Distinction": 2,
+            "First Class": 16,
+            "First Class or More": 18,
+            "Second Class": 2,
+            "Fail": 11,
+            "ATKT": 5,
+            "Pass": 51,
+            "Pass Percentage": 82.26
+        },
+        "THIRD SEMESTER (I)": {
+            "Total Students": 141,
+            "Distinction": 48,
+            "First Class": 86,
+            "First Class or More": 134,
+            "Second Class": 3,
+            "Fail": 8,
+            "ATKT": 18,
+            "Pass": 133,
+            "Pass Percentage": 94.33
+        }
+    },
+    "CO - Diploma In Computer Engineering": {
+        "FIFTH SEMESTER (I)": {
+            "Total Students": 61,
+            "Distinction": 52,
+            "First Class": 57,
+            "First Class or More": 109,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 4,
+            "Pass": 61,
+            "Pass Percentage": 100.0
+        },
+        "FINAL SEMESTER (I)": {
+            "Total Students": 5,
+            "Distinction": 0,
+            "First Class": 2,
+            "First Class or More": 2,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 0,
+            "Pass": 5,
+            "Pass Percentage": 100.0
+        },
+        "FIRST SEMESTER (I)": {
+            "Total Students": 4,
+            "Distinction": 0,
+            "First Class": 2,
+            "First Class or More": 2,
+            "Second Class": 0,
+            "Fail": 2,
+            "ATKT": 0,
+            "Pass": 2,
+            "Pass Percentage": 50.0
+        },
+        "FOURTH SEMESTER (I)": {
+            "Total Students": 16,
+            "Distinction": 0,
+            "First Class": 2,
+            "First Class or More": 2,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 5,
+            "Pass": 16,
+            "Pass Percentage": 100.0
+        },
+        "SECOND SEMESTER (I)": {
+            "Total Students": 41,
+            "Distinction": 0,
+            "First Class": 12,
+            "First Class or More": 12,
+            "Second Class": 7,
+            "Fail": 7,
+            "ATKT": 4,
+            "Pass": 34,
+            "Pass Percentage": 82.93
+        },
+        "THIRD SEMESTER (I)": {
+            "Total Students": 75,
+            "Distinction": 33,
+            "First Class": 55,
+            "First Class or More": 88,
+            "Second Class": 2,
+            "Fail": 2,
+            "ATKT": 2,
+            "Pass": 73,
+            "Pass Percentage": 97.33
+        }
+    },
+    "EE - Diploma In Electrical Engineering": {
+        "FIFTH SEMESTER (I)": {
+            "Total Students": 61,
+            "Distinction": 49,
+            "First Class": 57,
+            "First Class or More": 106,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 3,
+            "Pass": 61,
+            "Pass Percentage": 100.0
+        },
+        "FINAL SEMESTER (I)": {
+            "Total Students": 8,
+            "Distinction": 0,
+            "First Class": 1,
+            "First Class or More": 1,
+            "Second Class": 2,
+            "Fail": 0,
+            "ATKT": 0,
+            "Pass": 8,
+            "Pass Percentage": 100.0
+        },
+        "FIRST SEMESTER (I)": {
+            "Total Students": 10,
+            "Distinction": 0,
+            "First Class": 4,
+            "First Class or More": 4,
+            "Second Class": 1,
+            "Fail": 2,
+            "ATKT": 2,
+            "Pass": 8,
+            "Pass Percentage": 80.0
+        },
+        "FIRST SEMESTER (K)": {
+            "Total Students": 1,
+            "Distinction": 0,
+            "First Class": 0,
+            "First Class or More": 0,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 1,
+            "Pass": 1,
+            "Pass Percentage": 100.0
+        },
+        "FOURTH SEMESTER (I)": {
+            "Total Students": 11,
+            "Distinction": 0,
+            "First Class": 2,
+            "First Class or More": 2,
+            "Second Class": 4,
+            "Fail": 2,
+            "ATKT": 1,
+            "Pass": 9,
+            "Pass Percentage": 81.82
+        },
+        "SECOND SEMESTER (I)": {
+            "Total Students": 41,
+            "Distinction": 0,
+            "First Class": 6,
+            "First Class or More": 6,
+            "Second Class": 12,
+            "Fail": 4,
+            "ATKT": 12,
+            "Pass": 37,
+            "Pass Percentage": 90.24
+        },
+        "THIRD SEMESTER (I)": {
+            "Total Students": 62,
+            "Distinction": 12,
+            "First Class": 32,
+            "First Class or More": 44,
+            "Second Class": 3,
+            "Fail": 2,
+            "ATKT": 3,
+            "Pass": 60,
+            "Pass Percentage": 96.77
+        }
+    },
+    "EX - Diploma In Electronics Engineering": {
+        "FIFTH SEMESTER (I)": {
+            "Total Students": 53,
+            "Distinction": 37,
+            "First Class": 50,
+            "First Class or More": 87,
+            "Second Class": 1,
+            "Fail": 0,
+            "ATKT": 2,
+            "Pass": 53,
+            "Pass Percentage": 100.0
+        },
+        "FINAL SEMESTER (I)": {
+            "Total Students": 2,
+            "Distinction": 0,
+            "First Class": 1,
+            "First Class or More": 1,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 0,
+            "Pass": 2,
+            "Pass Percentage": 100.0
+        },
+        "FIRST SEMESTER (I)": {
+            "Total Students": 10,
+            "Distinction": 0,
+            "First Class": 2,
+            "First Class or More": 2,
+            "Second Class": 0,
+            "Fail": 8,
+            "ATKT": 0,
+            "Pass": 2,
+            "Pass Percentage": 20.0
+        },
+        "FOURTH SEMESTER (I)": {
+            "Total Students": 31,
+            "Distinction": 0,
+            "First Class": 8,
+            "First Class or More": 8,
+            "Second Class": 8,
+            "Fail": 4,
+            "ATKT": 3,
+            "Pass": 27,
+            "Pass Percentage": 87.1
+        },
+        "SECOND SEMESTER (I)": {
+            "Total Students": 43,
+            "Distinction": 0,
+            "First Class": 6,
+            "First Class or More": 6,
+            "Second Class": 3,
+            "Fail": 4,
+            "ATKT": 14,
+            "Pass": 39,
+            "Pass Percentage": 90.7
+        },
+        "THIRD SEMESTER (I)": {
+            "Total Students": 64,
+            "Distinction": 25,
+            "First Class": 48,
+            "First Class or More": 73,
+            "Second Class": 3,
+            "Fail": 0,
+            "ATKT": 6,
+            "Pass": 64,
+            "Pass Percentage": 100.0
+        }
+    },
+    "IF - Diploma In Information Technology": {
+        "FIFTH SEMESTER (I)": {
+            "Total Students": 63,
+            "Distinction": 54,
+            "First Class": 61,
+            "First Class or More": 115,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 2,
+            "Pass": 63,
+            "Pass Percentage": 100.0
+        },
+        "FINAL SEMESTER (I)": {
+            "Total Students": 10,
+            "Distinction": 0,
+            "First Class": 6,
+            "First Class or More": 6,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 0,
+            "Pass": 10,
+            "Pass Percentage": 100.0
+        },
+        "FIRST SEMESTER (I)": {
+            "Total Students": 3,
+            "Distinction": 1,
+            "First Class": 2,
+            "First Class or More": 3,
+            "Second Class": 0,
+            "Fail": 1,
+            "ATKT": 0,
+            "Pass": 2,
+            "Pass Percentage": 66.67
+        },
+        "FOURTH SEMESTER (I)": {
+            "Total Students": 8,
+            "Distinction": 0,
+            "First Class": 3,
+            "First Class or More": 3,
+            "Second Class": 0,
+            "Fail": 2,
+            "ATKT": 0,
+            "Pass": 6,
+            "Pass Percentage": 75.0
+        },
+        "SECOND SEMESTER (I)": {
+            "Total Students": 31,
+            "Distinction": 0,
+            "First Class": 15,
+            "First Class or More": 15,
+            "Second Class": 0,
+            "Fail": 6,
+            "ATKT": 2,
+            "Pass": 25,
+            "Pass Percentage": 80.65
+        },
+        "THIRD SEMESTER (I)": {
+            "Total Students": 76,
+            "Distinction": 30,
+            "First Class": 50,
+            "First Class or More": 80,
+            "Second Class": 1,
+            "Fail": 2,
+            "ATKT": 5,
+            "Pass": 74,
+            "Pass Percentage": 97.37
+        }
+    },
+    "ME - Diploma In Mechanical Engineering": {
+        "FIFTH SEMESTER (I)": {
+            "Total Students": 73,
+            "Distinction": 31,
+            "First Class": 53,
+            "First Class or More": 84,
+            "Second Class": 1,
+            "Fail": 5,
+            "ATKT": 8,
+            "Pass": 68,
+            "Pass Percentage": 93.15
+        },
+        "FINAL SEMESTER (I)": {
+            "Total Students": 45,
+            "Distinction": 9,
+            "First Class": 26,
+            "First Class or More": 35,
+            "Second Class": 0,
+            "Fail": 0,
+            "ATKT": 0,
+            "Pass": 45,
+            "Pass Percentage": 100.0
+        },
+        "FIRST SEMESTER (I)": {
+            "Total Students": 22,
+            "Distinction": 0,
+            "First Class": 8,
+            "First Class or More": 8,
+            "Second Class": 1,
+            "Fail": 11,
+            "ATKT": 2,
+            "Pass": 11,
+            "Pass Percentage": 50.0
+        },
+        "FOURTH SEMESTER (I)": {
+            "Total Students": 66,
+            "Distinction": 1,
+            "First Class": 4,
+            "First Class or More": 5,
+            "Second Class": 18,
+            "Fail": 11,
+            "ATKT": 5,
+            "Pass": 55,
+            "Pass Percentage": 83.33
+        },
+        "SECOND SEMESTER (I)": {
+            "Total Students": 94,
+            "Distinction": 1,
+            "First Class": 20,
+            "First Class or More": 21,
+            "Second Class": 23,
+            "Fail": 16,
+            "ATKT": 10,
+            "Pass": 78,
+            "Pass Percentage": 82.98
+        },
+        "THIRD SEMESTER (I)": {
+            "Total Students": 174,
+            "Distinction": 13,
+            "First Class": 57,
+            "First Class or More": 70,
+            "Second Class": 23,
+            "Fail": 9,
+            "ATKT": 25,
+            "Pass": 165,
+            "Pass Percentage": 94.83
+        }
+    }
+}
